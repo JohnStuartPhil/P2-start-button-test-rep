@@ -231,6 +231,16 @@ function updateEndMessage(endOfGame) {
     endMessageDiv.innerHTML = endMessage;
 }
 
+function removeMessages() {
+    let removeMessages = document.getElementById("messages");
+    removeMessages.innerHTML = "Result to go here";
+}
+
+function removeEndMessage() {
+    let removeEndMessage = document.getElementById("end-message");
+    removeEndMessage.innerHTML = "End message to go here";
+}
+
 addListenersToControlButtons()
 
 // Get the modal
