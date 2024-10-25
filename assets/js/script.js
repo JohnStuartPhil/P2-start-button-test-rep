@@ -9,6 +9,31 @@ let playerImage = document.getElementById("player-image");
 let computerImage = document.getElementById("computer-image");
 const messages = document.getElementById("messages");
 const choices = ["rock", "paper", "scissors", "lizard", "spock"];
+const rplsGame = ` 
+        <div>
+            <div>
+                <p>Make a choice</p>
+                <button aria-label="Rock" data-choice="0" class="control">Rock</button>
+                <button aria-label="Paper" data-choice="1" class="control">Paper</button>
+                <button aria-label="Scissors" data-choice="2" class="control">Scissors</button>
+                <button aria-label="Lizzard" data-choice="3" class="control">Lizard</button>
+                <button aria-label="Spock" data-choice="4" class="control">Spock</button>
+            </div>
+
+            <div id="messages">Result to go here</div>
+            <div id="end-message">End message to go here</div>
+
+            <div id="game-container">
+                <div class="player">
+                <h2 class="scores">Your score: <span id="player-score">0</span></h2>
+                <img id="player-image" src="assets/images/rpsls.png" alt="Rock Paper Scissors Lizard Spock">
+            </div>
+
+            <div class="computer">
+                <h2 class="scores">Computer score: <span id="computer-score">0</span></h2>
+                <img id="computer-image" src="assets/images/rpsls.png" alt="Rock Paper Scissors Lizard Spock">
+            </div>
+        </div>`
 let pScore = 0;
 let cScore = 0;
 const game = `<div class="player">
@@ -240,6 +265,27 @@ function removeEndMessage() {
     let removeEndMessage = document.getElementById("end-message");
     removeEndMessage.innerHTML = "End message to go here";
 }
+
+function addStartMenuListeners() {
+    let startButton = document.getElementById("start-game")
+    startButton.addEventListener("click", startRPSLSGame)
+}
+
+function startRPSLSGame() {
+    let gameArea = document.getElementById("game-area")
+    gameArea.innerHTML = rpsGame
+    buttons = document.getElementsByClassName("control");
+    playerScore = document.getElementById("player-score");
+    computerScore = document.getElementById("computer-score");
+    playerImage = document.getElementById("player-image");
+    computerImage = document.getElementById("computer-image");
+    messages = document.getElementById("messages");
+    choices = ["rock", "paper", "scissors", "lizard", "spock"];
+    addListenersToControlButtons()
+}
+
+
+addStartMenuListeners()
 
 addListenersToControlButtons()
 
