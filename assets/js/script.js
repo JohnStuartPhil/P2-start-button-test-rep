@@ -273,7 +273,7 @@ function addStartMenuListeners() {
 
 function startRPSLSGame() {
     let gameArea = document.getElementById("game-area")
-    gameArea.innerHTML = rpsGame
+    gameArea.innerHTML = rpslsGame
     buttons = document.getElementsByClassName("control");
     playerScore = document.getElementById("player-score");
     computerScore = document.getElementById("computer-score");
